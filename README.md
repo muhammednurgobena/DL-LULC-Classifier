@@ -14,7 +14,7 @@ LULC-CNN-DL is a deep learning project for Land Use and Land Cover (LULC) classi
 ### Steps
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/saf1zun/DL-LULC-Classifier.git
+    git clone https://github.com/muhammednurgobena/DL-LULC-Classifier.git
     cd LULC_Predictor
     ```
 
