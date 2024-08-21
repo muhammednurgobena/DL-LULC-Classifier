@@ -1,0 +1,12 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}My Django App{% endblock %}</title>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@1.8.0/dist/htmx.min.js"></script>
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html>

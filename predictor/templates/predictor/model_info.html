@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Information</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 800px; /* Adjust width as needed */
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #4CAF50;
+        }
+        .model-info {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .model-info h2 {
+            font-size: 20px;
+            color: #4CAF50;
+            margin-top: 0;
+        }
+        .model-info p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        #model-container {
+            width: 100%;
+            height: 80vh; /* Adjust the height as needed */
+            overflow: auto;
+            position: relative;
+            margin-top: 20px;
+        }
+        #model-svg {
+            width: 100%; /* Adjust this value as needed */
+            height: auto; /* Maintains aspect ratio */
+            max-width: 100%; /* Ensures it doesn't exceed container width */
+        }
+        .dataset-link {
+            margin-top: 20px;
+        }
+        .example-images img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Model Information</h1>
+        <div class="model-info">
+            <h2>About the Model</h2>
+            <p><strong>Architecture:</strong> CNN with 5 convolutional blocks and dropout.</p>
+            <p><strong>Dataset:</strong> EuroSAT dataset with diverse land cover classes.</p>
+            <p><strong>Performance:</strong> Achieves high accuracy on test data.</p>
+            <p><strong>Usage:</strong> Suitable for land use classification from Sentinel-2 images.</p>
+            <div id="model-container">
+                <img src="{% static 'images/best_model_keras.svg' %}" alt="Model Diagram" id="model-svg">
+            </div>
+            <p class="dataset-link">
+                <strong>Dataset:</strong> <a href="https://www.kaggle.com/datasets/apollo2506/eurosat-dataset" target="_blank">EuroSAT Dataset on Kaggle</a>
+            </p>
+            <p><a href="{% url 'upload_image' %}" hx-get="{% url 'upload_image' %}" hx-target="body" hx-swap="innerHTML">
+                <i class="fas fa-arrow-left"></i> Back to Upload Page
+            </a></p>
+            <p><a href="{% static 'notebooks/notebook.html' %}" target="_blank">
+                <i class="fas fa-file-alt"></i> View Jupyter Notebook
+            </a></p>
+        </div>
+    </div>
+</body>
+</html>

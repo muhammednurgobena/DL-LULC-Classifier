@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+            transition: box-shadow 0.3s ease;
+        }
+        .container:hover {
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 26px;
+            color: #4CAF50;
+            font-weight: 600;
+        }
+        p {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        strong {
+            color: #333;
+            font-weight: 700;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            font-size: 18px;
+            margin: 10px 0;
+            text-align: left;
+        }
+        .icon {
+            margin-right: 8px;
+        }
+        a {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-align: center;
+        }
+        a:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+        a:active {
+            background-color: #388e3c;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Results</h1>
+        <ul>
+            {% for class_name, probability in top_results %}
+                <li><strong>{{ class_name }}:</strong> {{ probability|floatformat:2 }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'upload_image' %}" hx-get="{% url 'upload_image' %}" hx-target="body" hx-swap="innerHTML">
+            <i class="fas fa-arrow-left icon"></i> Upload another image
+        </a>
+    </div>
+</body>
+</html>
