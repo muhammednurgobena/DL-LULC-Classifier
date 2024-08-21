@@ -1,5 +1,5 @@
 # DL-LULC-Classifier
-LULC-CNN-DL is a deep learning project for Land Use and Land Cover (LULC) classification using Convolutional Neural Networks (CNNs). It features can support multiple models, easy integration with Django and HTMX as frontend. This tool is ideal for environmental monitoring and geospatial analysis.
+DL-LULC-Classifier is a deep learning project for Land Use and Land Cover (LULC) classification using Convolutional Neural Networks (CNNs). It features can support multiple models, easy integration with Django and HTMX as frontend. This tool is ideal for environmental monitoring and geospatial analysis.
 
 
 ## Installation
