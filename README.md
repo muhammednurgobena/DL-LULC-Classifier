@@ -65,15 +65,8 @@ Thanks to the open-source community for the tools and libraries used in this pro
 
 
 # Demo
-![LULC Classification](C:/Users/mohac/OneDrive/Pictures/Screenshots/images/LULC.gif)
+![LULC](https://github.com/user-attachments/assets/16c02e88-fd32-4f63-9806-71e6a80674a9)
 
 
-LULC_Predictor/
-├── predictor/
-│ ├── ...
-│ ├── utils.py
-├── lulc_predictor/
-│ ├── settings.py
-├── manage.py
-├── README.md
-└── requirements.txt
+
+
